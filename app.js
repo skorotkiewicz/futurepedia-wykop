@@ -84,6 +84,8 @@ const getData = async () => {
 
   if ((found = regex.exec(html)) !== null) {
     found = found[1];
+  } else {
+    return;
   }
 
   const result = await Posts(found);

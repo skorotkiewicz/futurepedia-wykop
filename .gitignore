@@ -1,0 +1,6 @@
+cache.db
+index.js
+test*
+tmp.*
+.env
+node_modules

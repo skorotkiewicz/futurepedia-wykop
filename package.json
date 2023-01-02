@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "better-sqlite3": "^7.5.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.2.3",
+    "sign-api-wykop": "^1.0.2",
+    "wykop-nodejs": "^1.0.8"
+  }
+}

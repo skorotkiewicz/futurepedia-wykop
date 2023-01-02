@@ -1,10 +1,10 @@
 import * as dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: process.cwd() + "/.env" });
 import fetch from "node-fetch";
 import Database from "better-sqlite3";
 import Wykop from "wykop-nodejs";
 
-const db = new Database("cache.db");
+const db = new Database(process.cwd() + "/cache.db");
 
 (async () => {
   await db.exec(`CREATE TABLE IF NOT EXISTS tools (

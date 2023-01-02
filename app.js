@@ -79,13 +79,12 @@ const getData = async () => {
   const response = await fetch("https://www.futurepedia.io/leaderboard");
   const html = await response.text();
 
-  let found = html.match(
-    /id=\"__NEXT_DATA__\" type="application\/json">(.*)<\/script>/g
-  );
+  const regex = /<script[^>]*id="__NEXT_DATA__"[^>]*>([^<]*)<\/script>/;
+  let found;
 
-  found = found[0];
-  found = found.replace('id="__NEXT_DATA__" type="application/json">', "");
-  found = found.replace("</script>", "");
+  if ((found = regex.exec(html)) !== null) {
+    found = found[1];
+  }
 
   const result = await Posts(found);
   result && postWykop(result);
